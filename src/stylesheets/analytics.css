@@ -1,0 +1,59 @@
+p em {
+    color: #bcbcbc;
+}
+
+.vertical-line {
+    border-right: 1px solid #000000;
+}
+
+.panel-border {
+    border-color: #ffffff !important;
+}
+
+.panel-border>.panel-heading {
+    padding: 2px 15px !important;
+}
+
+.severity-box {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-color: #ebccd1;
+}
+
+.box-shadow {
+    box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important;
+    padding: 15px 20px;
+}
+
+.circle-chart {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.circles {
+    margin-bottom: -10px;
+}
+
+.circle span {
+    padding-left: 70px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.inner-content {
+    margin: 0 0 50px 0;
+}
+
+.circle span, .scan-status {
+    font-size: 20px;
+    font-size: 20px;
+    dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+path.CircularProgressbar-path {
+    stroke-dasharray: 0;
+}

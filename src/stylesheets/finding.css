@@ -1,0 +1,99 @@
+.critical-severity {
+    background-color: #d43f3a !important;
+}
+
+.high-severity {
+    background-color: #ee9336 !important;
+}
+
+.medium-severity {
+    background-color: #fdc431 !important;
+}
+
+.low-severity {
+    background-color: #36a2eb !important;
+}
+
+.info-severity {
+    background-color: #82ca9d !important;
+}
+
+.finding-detail {
+    padding: 25px;
+}
+
+.comment-message {
+    color: #858c93;
+}
+
+.comments-list, .uploads-list, .tags-list {
+    min-height: 20px;
+    padding: 19px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+.comment-form, .upload-form, .tag-form {
+    margin-left: 10px;
+}
+
+#comment_message {
+    height: 100px; //      width: 98%;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+/*
+.label, .badge {
+    background-color: #999999;
+    color: white;
+    display: inline-block;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    padding: 2px 4px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.label {
+    padding: 4px 5px !important;
+}
+*/
+
+.finding-new-status {
+    background-color: #5cb85c
+}
+
+.finding-open-status {
+    background-color: #337ab7
+}
+
+.finding-deferred-status {
+    background-color: #777777
+}
+
+.finding-fix-in-progress-status {
+    background-color: #f0ad4e
+}
+
+.status-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.scan-summary {
+    margin-right: 10px;
+}

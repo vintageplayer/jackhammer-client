@@ -1,0 +1,13 @@
+.upload-manifest {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 40px;
+}
+
+.filepicker.dropzone .dz-preview.dz-image-preview {
+    background: none;
+}
+
+.filepicker.dropzone .dz-preview.dz-image-preview .dz-image {
+    border-radius: 5px;
+}

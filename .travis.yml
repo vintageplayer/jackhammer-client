@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run production
+on:
+  branch: master
+sudo: required
+services:
+  - docker
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master

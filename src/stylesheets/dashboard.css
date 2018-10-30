@@ -1,0 +1,191 @@
+/* .info-box
+
+=================================================================== */
+
+.info-box {
+    min-height: 140px;
+    margin-bottom: 30px;
+    padding: 20px;
+    color: white;
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.35), 0 3px 1px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.35), 0 3px 1px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.35), 0 3px 1px -1px rgba(0, 0, 0, 0.1);
+}
+
+.info-box i {
+    display: block;
+    height: 100px;
+    font-size: 60px;
+    line-height: 100px;
+    width: 100px;
+    float: left;
+    text-align: center;
+    margin-right: 20px;
+    padding-right: 20px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.info-box .count {
+    margin-top: 20px;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.info-box .title {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.info-box .desc {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.info-box.danger {
+    background: #ff5454;
+    border: 1px solid #ff2121;
+}
+
+.info-box.warning {
+    background: #fabb3d;
+    border: 1px solid #f9aa0b;
+}
+
+.info-box.primary {
+    background: #20a8d8;
+    border: 1px solid #1985ac;
+}
+
+.info-box.info {
+    background: #67c2ef;
+    border: 1px solid #39afea;
+}
+
+.info-box.success {
+    background: #79c447;
+    border: 1px solid #61a434;
+}
+
+/*----------------	color------------------------*/
+
+.dark-heading-bg {
+    background: #4c4f53;
+    border: 1px solid #4c4f53;
+}
+
+.main-bg {
+    background: #e6e8ea;
+}
+
+.white-bg {
+    color: #768399;
+    background: #fff;
+    background-color: #fff;
+}
+
+.critical-bg {
+    color: #fff;
+    background: rgb(255, 77, 77);
+    background-color: linear-gradient(60deg, rgb(215, 37, 37), rgb(255, 77, 77));
+}
+
+.high-bg {
+    color: #fff;
+    background: rgb(255, 112, 77);
+    background-color: linear-gradient(60deg, rgb(215, 72, 37), rgb(255, 112, 77));
+}
+
+.medium-bg {
+    color: #fff;
+    background: rgb(247, 163, 92);
+    background-color: linear-gradient(60deg, rgb(207, 143, 52), rgb(247, 163, 92));
+}
+
+.low-bg {
+    color: #fff;
+    background: rgb(124, 181, 236);
+    background-color: linear-gradient(60deg, rgb(84, 141, 196), rgb(124, 181, 236));
+}
+
+.info-bg {
+    color: #fff;
+    background: rgb(144, 237, 125);
+    background-color: linear-gradient(60deg, rgb(104, 197, 85), rgb(144, 237, 125));
+}
+
+.orange-bg {
+    color: #fff;
+    background: #f4b162;
+    background-color: #f4b162;
+}
+
+.purple-bg {
+    color: #fff;
+    background: #af91e1;
+    background-color: #af91e1;
+}
+
+.pink-bg {
+    color: #fff;
+    background: #f78db8;
+    background-color: #f78db8;
+}
+
+.lime-bg {
+    color: #fff;
+    background: #a8db43;
+    background-color: #a8db43;
+}
+
+.magenta-bg {
+    color: #fff;
+    background: #e65097;
+    background-color: #e65097;
+}
+
+.teal-bg {
+    color: #fff;
+    background: #97d3c5;
+    background-color: #97d3c5;
+}
+
+.brown-bg {
+    color: #fff;
+    background: #d1b993;
+    background-color: #d1b993;
+}
+
+.gray-bg {
+    color: #768399;
+    background: #e4e9eb;
+    background-color: #e4e9eb;
+}
+
+.dark-bg {
+    color: #fff;
+    background: #1a2732;
+    background-color: #1a2732;
+}
+
+.facebook-bg {
+    color: #fff;
+    background: #3b5998;
+    background-color: #3b5998;
+}
+
+.twitter-bg {
+    color: #fff;
+    background: #00aced;
+    background-color: #00aced;
+}
+
+.linkedin-bg {
+    color: #fff;
+    background: #4875b4;
+    background-color: #4875b4;
+}
+
+.stack-chart, .line-percentage-chart {
+    margin-top: 20px;
+}

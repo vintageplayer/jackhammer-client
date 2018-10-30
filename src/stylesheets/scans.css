@@ -1,0 +1,65 @@
+.list-targets>.tab-content {
+    margin: 0px 20px 0px 20px;
+}
+
+ul.alert-badges {
+    margin-left: -60px !important;
+}
+
+li.severity-badge {
+    width: 40px;
+    margin-right: 4px;
+}
+
+.severity-badge {
+    padding: 5px 7px 5px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 20px;
+    display: inline-block;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+span.severity-badge {
+    width: 50px;
+}
+
+.severity-badge.light {
+    color: #fcfcfc;
+    font-weight: normal;
+}
+
+.critical-badge {
+    background-color: rgb(255, 77, 77);
+}
+
+.high-badge {
+    background-color: rgb(255, 112, 77);
+}
+
+.medium-badge {
+    background-color: rgb(247, 163, 92);
+}
+
+.low-badge {
+    background-color: rgb(124, 181, 236);
+}
+
+.info-badge {
+    background-color: rgb(144, 237, 125);
+}
+
+.btn-scan-page {
+    padding: 5px 7px 5px;
+}
+
+.add-target-form {
+    margin-top: 20px;
+}
+
+.add-target-content {
+    padding-top: 50px;
+}

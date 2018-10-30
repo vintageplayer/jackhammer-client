@@ -1,0 +1,22 @@
+.repo-findings {
+    margin-right: 250px;
+    margin-left: 20px;
+}
+
+.right-sidebar {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    min-height: 100%;
+    height: auto;
+    min-width: 230px;
+    z-index: 810;
+    padding-top: 50px;
+    width: 230px;
+    background: #222d32;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -moz-transition: -moz-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -o-transition: -o-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    transition: transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+}

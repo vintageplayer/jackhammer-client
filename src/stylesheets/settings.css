@@ -1,0 +1,12 @@
+.scantypes-table,.tools-list-table{
+	margin-top:50px;
+}
+.checkbox-slider--b-flat input:checked+span::before {
+    content: "\f00c";
+    padding-left: 4px;
+    font-family: FontAwesome;
+    color: #ffffff;
+}
+.git-pull-info{
+	margin-top: 150px;
+}

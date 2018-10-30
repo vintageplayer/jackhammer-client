@@ -1,0 +1,230 @@
+#layout>.container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media (min-width: 1200px) {
+    .login-container {
+        width: 1000px;
+    }
+}
+
+@media (min-width: 992px) {
+    .login-container {
+        width: 1000px;
+    }
+}
+
+@media (min-width: 768px) {
+    .login-container {
+        width: 760px;
+    }
+}
+
+.center-block, .container, .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container, .container-fluid, ul {
+    padding-left: 20px;
+}
+
+.container, .container-fluid {
+    padding-right: 20px;
+}
+
+.header-navbar-skinny .navbar-default, .header-navbar-visitor .navbar-default {
+    min-height: 40px;
+    border-radius: 0;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 2px;
+    }
+}
+
+.footer-navbar-wrapper {
+    background-color: #494949;
+}
+
+.footer-skinny {
+    clear: both;
+    position: relative;
+    height: 119px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+.login-footer {
+    position: fixed;
+    height: auto;
+    bottom: 0;
+    width: 100%;
+}
+
+.login_content {
+    position: relative;
+    padding: 0px 0px 40px;
+}
+
+p.m-lg-bottom {
+    line-height: 20px;
+    font-size: 16px;
+    font-family: 'Dosis';
+}
+
+.m-lg-bottom, .m-lg-top-bottom {
+    margin-bottom: 40px !important;
+}
+
+.m-md-top, .sign-in-button {
+    margin-top: 20px!important;
+}
+
+.p-sm-bottom, .p-sm-top-bottom {
+    padding-bottom: 10px!important;
+}
+
+.p-sm-top, .p-sm-top-bottom {
+    padding-top: 16px!important;
+}
+
+.m-0-bottom, .m-0-top-bottom {
+    margin-bottom: 0!important;
+}
+
+.m-0-top, .m-0-top-bottom {
+    margin-top: 0!important;
+}
+
+.p-sm-top-bottom {
+    margin: 40px 0 40px 30px;
+    font-size: 16px;
+    box-shadow: none;
+    border-color: #008329;
+    color: #7cc576;
+    ;
+    background-color: #fff;
+    border-radius: 2px;
+    line-height: 12px;
+    margin-left: 30px;
+    border: 2px solid #e0e0e0;
+}
+
+.p-sm-top-bottom:hover {
+    border-color: #7cc576;
+    background-color: #fff;
+    color: #7cc576;
+}
+
+.already-account-present-link {
+    color: #7cc576;
+    padding-left: 10px;
+}
+
+.is-account-present {
+    float: right;
+    font-family: 'Dosis';
+    font-size: 16px;
+}
+
+.login-button {
+    width: 100%;
+}
+
+.signup-checkbox {
+    padding-left: 8px;
+}
+
+.signup-checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+}
+
+.signup-checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 2px solid #7cc576;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.signup-checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #555555;
+}
+
+.signup-checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+
+.signup-checkbox input[type="checkbox"]:focus+label::before {
+    outline: thin dotted;
+    outline: 5px auto #7cc576;
+    outline-offset: -2px;
+}
+
+.signup-checkbox input[type="checkbox"]:checked+label::after {
+    font-family: 'FontAwesome';
+    content: "\2713";
+    color: #7cc576;
+    font-size: 12px;
+}
+
+.already-account-present-link {
+    color: #7cc576;
+    align-content: left;
+    position: absolute;
+    padding-left: 10px;
+}
+
+.forgot-password-link {
+    color: #7cc576;
+}
+
+a.forgot-password-link:visit, a.forgot-password-link:hover {
+    color: #7cc576 !important;
+}
+
+a.already-account-present-link:hover {
+    color: #7cc576;
+}
+
+a.already-account-present-link:visited {
+    color: #7cc576;
+}
+
+.sign-in-form-group {
+    margin-top: 40px;
+}
+
+.signup-button {
+    width: 100%;
+}
