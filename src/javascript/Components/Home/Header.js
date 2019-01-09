@@ -23,6 +23,9 @@ export default class Header extends React.Component {
                 <a href="#work_outer">Latest Work</a>
               </li>
               <li>
+                <a href="#team">Team</a>
+              </li>
+              <li>
                 <Link to="/login">
                   Sign in
                 </Link>

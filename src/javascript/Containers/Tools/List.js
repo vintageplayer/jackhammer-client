@@ -137,7 +137,7 @@ class List extends Component {
   // }
   handleSearchChange = (searchText, colInfos, multiColumnSearch) => {
     if (searchText.length >= 3 || searchText.length == 0) {
-      this.fetchData(1, this.state.sizePerPage, searchText, this.state.orderBy, this.state.sortDirection);
+      this.fetchData(1, this.state.sizePerPage, 0, searchText, this.state.orderBy, this.state.sortDirection);
     }
   }
   handleSortChange = (sortName, sortOrder) => {

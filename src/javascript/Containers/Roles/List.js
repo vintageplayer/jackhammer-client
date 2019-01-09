@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import * as roleActions from '../../Actions/RoleActions'
 import {BootstrapTable} from 'react-bootstrap-table'
-import {renderToAddPage, formatDate, editFormatter, createCustomToolBar} from '../Common'
+import {renderToAddPage, formatDate, editFormatter, createCustomToolBar,} from '../Common'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {Link} from 'react-router-dom'
@@ -17,7 +17,7 @@ class List extends Component {
       totalSize: 0,
       orderBy: "name",
       sortDirection: 'ASC',
-      searchTerm: null,
+      searchTerm: null
     };
     this.fetchData = this
       .fetchData
@@ -54,7 +54,7 @@ class List extends Component {
       limit: sizePerPage,
       orderBy: orderBy,
       sortDirection: sortDirection,
-      searchTerm: searchTerm,
+      searchTerm: searchTerm
     }
     this
       .props
@@ -67,7 +67,7 @@ class List extends Component {
       page: page,
       searchTerm: searchTerm,
       orderBy: orderBy,
-      sortDirection: sortDirection
+      sortDirection: sortDirection,
     })
   }
   handlePageChange(page, sizePerPage) {
@@ -90,7 +90,7 @@ class List extends Component {
   }
   handleSearchChange = (searchText, colInfos, multiColumnSearch) => {
     if (searchText.length >= 3 || searchText.length == 0) {
-      this.fetchData(1, this.state.sizePerPage, searchText, this.state.orderBy, this.state.sortDirection);
+      this.fetchData(1, this.state.sizePerPage, 0, searchText, this.state.orderBy, this.state.sortDirection);
     }
   }
   handleSortChange = (sortName, sortOrder) => {
@@ -128,7 +128,7 @@ class List extends Component {
       firstPage: 'First', // First page button text
       lastPage: 'Last', // Last page button text,,,,
       onSearchChange: this.handleSearchChange,
-      onSortChange: this.handleSortChange,
+      onSortChange: this.handleSortChange
     };
     const {fetchedRoles} = this.props;
     const {totalSize} = this.props;
@@ -157,7 +157,7 @@ const mapStateToProps = (state) => ({
   updateAllowed: state.roles.updateAllowed,
   createAllowed: state.roles.createAllowed,
   totalSize: state.roles.totalSize,
-  deleteResponse: state.roles.deleteResponse
+  deleteResponse: state.roles.deleteResponse,
 });
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(roleActions, dispatch)

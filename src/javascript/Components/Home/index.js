@@ -15,6 +15,7 @@ export default class Home extends React.Component {
         <Overview/>
         <Features/>
         <HowItWorks/>
+        <Team/>
         <Contact/>
         <Footer/>
       </div>
