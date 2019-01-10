@@ -122,7 +122,7 @@ class Create extends Component {
     };
     var djsConfig = {
       addRemoveLinks: true,
-      acceptedFiles: "application/vnd.android.package-archive",
+      acceptedFiles: "application/json",
       autoProcessQueue: false
     }
     var eventHandlers = {

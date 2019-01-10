@@ -44,28 +44,32 @@ class FindingDetail extends Component {
 
   handleStatus(event) {
     const payload = {
-      status: event.target.value
+      status: event.target.value,
+      id: this.props.match.params.id,
     };
     this.updateFinding(payload);
     this.setState({flashMessage: 'Finding Status updated successfully'});
   }
   handleNotExploitable() {
     const payload = {
-      notExploitable: true
+      notExploitable: true,
+      id: this.props.match.params.id,
     };
     this.updateFinding(payload);
     this.setState({flashMessage: 'Finding change to NotExploitable successfully'});
   }
   handleFalsePositive() {
     const payload = {
-      isFalsePositive: true
+      isFalsePositive: true,
+      id: this.props.match.params.id,
     };
     this.updateFinding(payload);
     this.setState({flashMessage: 'Finding change to FalsePositive successfully'});
   }
   handlePublishToJira() {
     const payload = {
-      pushedToJira: true
+      pushedToJira: true,
+      id: this.props.match.params.id
     };
     this.updateFinding(payload);
     this.setState({flashMessage: 'Finding push to jira successfully'});
@@ -74,8 +78,7 @@ class FindingDetail extends Component {
     const {findingId} = this.props.match.params;
     this
       .props
-      .dispatch(updateFinding(payload, findingId));
-
+      .dispatch(updateFinding(payload, payload.id || findingId));
   }
   fetchData(page = this.state.page, sizePerPage = this.state.sizePerPage, offset = this.state.offset) {
     offset = (page - 1) * sizePerPage;
@@ -158,7 +161,7 @@ class FindingDetail extends Component {
   renderIsFalsePositive(finding) {
     if (finding && finding.isFalsePositive) {
       return (
-        <button disabled class="btn btn-danger">Mark Not Exploitable</button>
+        <button disabled class="btn btn-danger">Mark False Positive</button>
       )
     } else {
       return (

@@ -12,9 +12,9 @@ import * as repoActions from '../../Actions/RepoActions'
 import * as scanActions from '../../Actions/ScanActions'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {FormGroup, Button,} from 'react-bootstrap'
-import {underlineFocusStyle, floatingLabelFocusStyle, selectContainerStyle} from '../CSSModules'
-import {fetchDropdownOptions, selectionsRenderer} from '../Common'
+import {FormGroup, Button} from 'react-bootstrap'
+import {underlineFocusStyle, floatingLabelFocusStyle, selectContainerStyle,} from '../CSSModules'
+import {fetchDropdownOptions, selectionsRenderer,} from '../Common'
 import {toastr} from 'react-redux-toastr'
 import {ValidatorForm} from 'react-form-validator-core'
 import {TextValidator} from 'react-material-ui-form-validator'
@@ -31,7 +31,7 @@ import {
   MOBILE,
   WORDPRESS,
   NETWORK,
-  HARDCODED_SECRET
+  HARDCODED_SECRET,
 } from '../../Config/Constants'
 
 const groupFieldRequired = (ownerType, scanType) => ownerType && scanType && (ownerType.name === CORPORATE || ownerType.name === TEAM);
@@ -62,7 +62,7 @@ class TargetForm extends Component {
       selectedSchedule: null,
       apkFile: null,
       status: 'Pending',
-      repoFiedlRequired: false
+      repoFiedlRequired: false,
     };
     this.handleGroupChange = this
       .handleGroupChange
@@ -104,20 +104,19 @@ class TargetForm extends Component {
     this
       .props
       .actions
-      .fetchAllGroups({limit: -1, ownerTypeId: ownerTypeId, scanTypeId: scanTypeId,});
+      .fetchAllGroups({limit: -1, ownerTypeId: ownerTypeId, scanTypeId: scanTypeId});
     this
       .props
       .actions
-      .fetchAllScheduleTypes({ownerTypeId: ownerTypeId, scanTypeId: scanTypeId});
+      .fetchAllScheduleTypes({ownerTypeId: ownerTypeId, scanTypeId: scanTypeId,});
   }
   handleProjectTitleChange = (event, projectTitle) => this.setState({projectTitle});
   handleTargetChange = (event, target) => this.setState({target});
   handleBranchChange = (event, branch) => this.setState({branch});
   handleGroupChange(selectedGroups, name) {
-    const {currentOwnerType, currentScanType,} = this.props;
+    const {currentOwnerType, currentScanType} = this.props;
     this.setState({selectedGroups});
     var selectedGroupIds = [];
-
     if (Array.isArray(selectedGroups)) {
       var selectAllPresent = selectedGroups.find((group) => group.value == "Select All");
       if (selectAllPresent) {
@@ -135,7 +134,7 @@ class TargetForm extends Component {
     } else {
       selectedGroupIds.push(selectedGroups['value'])
     }
-    this.setState({groupIds: selectedGroupIds});
+    this.setState({selectedGroupIds: selectedGroupIds});
     if (repoFieldRequired(currentOwnerType, currentScanType)) {
       this
         .props
@@ -186,12 +185,12 @@ class TargetForm extends Component {
       var componentConfig = {
         iconFiletypes: ['.apk'],
         showFiletypeIcon: true,
-        postUrl: 'no-url'
+        postUrl: 'no-url',
       };
       var djsConfig = {
         addRemoveLinks: true,
         acceptedFiles: "application/vnd.android.package-archive",
-        autoProcessQueue: false
+        autoProcessQueue: false,
       }
       var eventHandlers = {
         addedfile: (file) => this.handleApkUpload(file)
@@ -220,7 +219,7 @@ class TargetForm extends Component {
       var groupList = fetchedGroups;
       var selectAllFound = fetchedGroups.find((group) => group.name == 'Select All');
       if (selectAllFound == null)
-        groupList.unshift({id: 'Select All', name: 'Select All'});
+        groupList.unshift({id: 'Select All', name: 'Select All',});
       return (
         <SelectField name='selectedGroups' hintText='' value={selectedGroups} floatingLabel='Group' onChange={this.handleGroupChange} fullWidth={true} maxHeight={200} floatingLabelFocusStyle={floatingLabelFocusStyle} underlineFocusStyle={underlineFocusStyle} multiple={isMultiSelect} checkPosition='right' style={selectContainerStyle} selectionsRenderer={(values, hintText) => selectionsRenderer(values, hintText)}>
           {fetchDropdownOptions(groupList)}
@@ -235,7 +234,7 @@ class TargetForm extends Component {
       var repoList = groupRepos;
       var selectAllFound = groupRepos.find((repo) => repo.name == 'Select All');
       if (selectAllFound == null)
-        repoList.unshift({id: 'Select All', name: 'Select All'})
+        repoList.unshift({id: 'Select All', name: 'Select All',})
       return (
         <SelectField name='selectedRepos' hintText='' value={selectedRepos} floatingLabel='Repo' onChange={this.handleRepoChange} fullWidth={true} maxHeight={200} floatingLabelFocusStyle={floatingLabelFocusStyle} underlineFocusStyle={underlineFocusStyle} multiple checkPosition='right' style={selectContainerStyle} selectionsRenderer={(values, hintText) => selectionsRenderer(values, hintText)}>
           {fetchDropdownOptions(repoList)}
@@ -267,7 +266,7 @@ class TargetForm extends Component {
     this.submitRequest("Pending");
   }
   submitRequest(status) {
-    const {currentOwnerType, currentScanType,} = this.props;
+    const {currentOwnerType, currentScanType} = this.props;
     var selectedGroupIds = [];
     if (this.state.selectedGroupIds !== undefined)
       selectedGroupIds = this.state.selectedGroupIds;
@@ -323,7 +322,7 @@ class TargetForm extends Component {
         groupIds: selectedGroupIds,
         repoIds: selectedRepoIds,
         scheduleTypeId: selectedSchedule,
-        status: status
+        status: status,
       };
       this
         .props
@@ -333,7 +332,7 @@ class TargetForm extends Component {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.createResponse) {
-      var {ownerType, scanType,} = this.props.match.params;
+      var {ownerType, scanType} = this.props.match.params;
       var redirectUrl = '/scans/' + ownerType + "/" + scanType;
       this
         .context
@@ -341,6 +340,18 @@ class TargetForm extends Component {
         .history
         .push(redirectUrl, {state: 'state'});
       toastr.success('Scan created successfully');
+    }
+    if (nextProps.fetchedGroups) {
+      var SelectedGroup = nextProps
+        .fetchedGroups
+        .find((group) => group.isDefault);
+      this.setState({
+        selectedGroups: {
+          value: SelectedGroup.id,
+          label: SelectedGroup.name,
+        },
+        selectedGroupIds: [SelectedGroup.id],
+      });
     }
     if (nextProps.currentScanType && nextProps.currentScanType.name === NETWORK) {
       ValidatorForm.addValidationRule('isValidUrl', (value) => {
@@ -389,9 +400,15 @@ class TargetForm extends Component {
       branch,
       selectedGroups,
       selectedRepos,
-      selectedSchedule
+      selectedSchedule,
     } = this.state;
-    const {fetchedGroups, fetchedScheduleTypes, groupRepos, currentScanType, currentOwnerType} = this.props;
+    const {
+      fetchedGroups,
+      fetchedScheduleTypes,
+      groupRepos,
+      currentScanType,
+      currentOwnerType,
+    } = this.props;
     return (
       <div class="page-wrapper">
         <section class="content-header">
@@ -459,6 +476,6 @@ const mapStateToProps = (state) => ({
   currentOwnerType: state.scheduleTypes.ownerType,
   currentScanType: state.scheduleTypes.scanType,
   createResponse: state.scans.createResponse,
-  error: state.scans.error,
+  error: state.scans.error
 });
 export default connect(mapStateToProps, mapDispatchToProps)(TargetForm);;

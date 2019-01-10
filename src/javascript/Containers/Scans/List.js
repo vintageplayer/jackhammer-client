@@ -57,7 +57,7 @@ class List extends Component {
     const {ownerType, scanType} = this.props;
     this.fetchData(ownerType, scanType);
     this.interval = setInterval(() => {
-      this.fetchData(ownerType, scanType)
+      this.fetchData(ownerType, scanType);
     }, 30000);
   }
   deleteSelectedScan(event, scanId) {
@@ -98,7 +98,8 @@ class List extends Component {
     this
       .props
       .actions
-      .fetchAllScans(payload, this.props.scanType);
+      .fetchAllScans(payload, scanType);
+
     this.setState({
       totalSize: this.props.totalSize,
       offset: offset,
@@ -208,9 +209,13 @@ class List extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.ownerType != nextProps.ownerType || this.props.scanType != nextProps.scanType) {
       this.fetchData(nextProps.ownerType, nextProps.scanType);
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.fetchData(nextProps.ownerType, nextProps.scanType);
+      }, 30000);
     }
     if (nextProps.deleteResponse) {
-      this.fetchData(this.props.ownerType, this.props.ownerType, this.props.ownerType);
+      this.fetchData(nextProps.ownerType, nextProps.scanType);
       toastr.success('Scan deleted successfully');
     }
     if (nextProps.updateResponse) {

@@ -15,7 +15,7 @@ function calculateTotal(analyticsData) {
 const severityDivider = {
   marginTop: 0,
   marginBottom: 1,
-  width: 50,
+  width: 50
 }
 class SeverityPercentage extends Component {
   calculateSeverityPercentage(currentSeverityCount) {
@@ -37,7 +37,7 @@ class SeverityPercentage extends Component {
   }
   componentDidMount() {}
   render() {
-    const {analyticsData, currentOwnerType,} = this.props;
+    const {analyticsData, currentOwnerType} = this.props;
     return (
       <div class="card">
         <div class="card-body">
@@ -66,7 +66,7 @@ class SeverityPercentage extends Component {
                 }
               }}/>
               <span>
-                {this.getSeverityCount("criticalCount")}
+                {this.getSeverityCount("highCount")}
               </span>
               <hr style={severityDivider}/>
               <span>
@@ -112,7 +112,7 @@ class SeverityPercentage extends Component {
                 path: {
                   stroke: `rgba(144, 237, 125)`,
                   strokeDasharray: 0,
-                  strokeDashoffset: 0
+                  strokeDashoffset: 0,
                 }
               }}/>
               <span>
