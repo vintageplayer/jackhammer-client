@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import * as scanActions from '../../Actions/ScanActions'
 import {BootstrapTable} from 'react-bootstrap-table'
-import {renderToAddPage, formatDate, editFormatter, createCustomToolBar} from '../Common'
+import {renderToAddPage, formatDate, editFormatter, createCustomToolBar,} from '../Common'
 import {severityCounts} from './SeverityCounts'
 import {toastr} from 'react-redux-toastr'
 import {connect} from 'react-redux'
@@ -23,7 +23,7 @@ class List extends Component {
       sortDirection: 'DESC',
       searchTerm: null,
       reloadDuration: 0,
-      firstAutoReload: false
+      firstAutoReload: false,
     };
     this.fetchData = this
       .fetchData
@@ -54,7 +54,7 @@ class List extends Component {
     router: React.PropTypes.object
   }
   componentDidMount() {
-    const {ownerType, scanType} = this.props;
+    const {ownerType, scanType,} = this.props;
     this.fetchData(ownerType, scanType);
     this.interval = setInterval(() => {
       this.fetchData(ownerType, scanType);
@@ -70,7 +70,7 @@ class List extends Component {
     const payload = {
       status: 'Queued'
     };
-    const {ownerType, scanType} = this.props;
+    const {ownerType, scanType,} = this.props;
     this
       .props
       .actions
@@ -93,7 +93,7 @@ class List extends Component {
       sortDirection: sortDirection,
       searchTerm: searchTerm,
       ownerTypeId: ownerType,
-      scanTypeId: scanType,
+      scanTypeId: scanType
     }
     this
       .props
@@ -107,7 +107,7 @@ class List extends Component {
       page: page,
       searchTerm: searchTerm,
       orderBy: orderBy,
-      sortDirection: sortDirection,
+      sortDirection: sortDirection
     })
   }
   handlePageChange(page, sizePerPage) {
@@ -200,7 +200,7 @@ class List extends Component {
     return (
       <Link to={{
         pathname: '/repo_vulnerability_trend/' + repoLinkParameters.join("/"),
-        search: '?repoId=' + row.repoId,
+        search: '?repoId=' + row.repoId
       }}>
         {row.name}
       </Link>
@@ -252,7 +252,7 @@ class List extends Component {
       firstPage: 'First', // First page button text
       lastPage: 'Last', // Last page button text,,,,
       onSearchChange: this.handleSearchChange,
-      onSortChange: this.handleSortChange,
+      onSortChange: this.handleSortChange
     };
     const {fetchedScans} = this.props;
     const {totalSize} = this.props;
@@ -269,6 +269,7 @@ class List extends Component {
       }} search remote pagination striped hover bordered={false}>
         <TableHeaderColumn dataField="name" isKey dataSort dataFormat={this.scanTitleFormatter}>Title</TableHeaderColumn>
         <TableHeaderColumn dataField="createdAt" dataFormat={(cell, row) => formatDate(cell, row)} dataSort>Created</TableHeaderColumn>
+        <TableHeaderColumn dataField="updatedAt" dataFormat={(cell, row) => formatDate(cell, row)} dataSort>Updated</TableHeaderColumn>
         <TableHeaderColumn dataField="status" dataSort>Status</TableHeaderColumn>
         <TableHeaderColumn dataField="statusReason">Failed Reason</TableHeaderColumn>
         <TableHeaderColumn dataField="id" dataAlign='center' width="250px" dataFormat={this.showSeveritiesCount}>Results</TableHeaderColumn>
@@ -287,7 +288,7 @@ const mapStateToProps = (state) => ({
   totalSize: state.scans.totalSize,
   deleteResponse: state.scans.deleteResponse,
   updateResponse: state.scans.updateResponse,
-  readFindingsAllowed: state.scans.readFindingsAllowed
+  readFindingsAllowed: state.scans.readFindingsAllowed,
 });
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(scanActions, dispatch)

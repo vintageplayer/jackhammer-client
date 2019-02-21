@@ -36,14 +36,14 @@ import {
 
 const groupFieldRequired = (ownerType, scanType) => ownerType && scanType && (ownerType.name === CORPORATE || ownerType.name === TEAM);
 
-const multiGroupSelectionRequired = (ownerType, scanType) => groupFieldRequired(ownerType, scanType) && scanType.name === SOURCE_CODE;
+const multiGroupSelectionRequired = (ownerType, scanType) => groupFieldRequired(ownerType, scanType) && (scanType.name === SOURCE_CODE || scanType.name === HARDCODED_SECRET);
 
 const singleGroupSelectionRequired = (ownerType, scanType) => groupFieldRequired(ownerType, scanType) && (scanType.name !== SOURCE_CODE || scanType.name !== HARDCODED_SECRET);
 
 const repoFieldRequired = (ownerType, scanType) => ownerType && scanType && (ownerType.name === CORPORATE || ownerType.name === TEAM) && (scanType && (scanType.name === SOURCE_CODE || scanType.name === HARDCODED_SECRET));
 
 const projectTitleFieldRequired = (ownerType, scanType) => ownerType && scanType && (ownerType.name === PERSONAL || scanType.name !== SOURCE_CODE);
-
+const hardcodeSecretProjectTitleFieldRequired = (ownerType, scanType) => ownerType && scanType && (ownerType.name === PERSONAL || scanType.name !== HARDCODED_SECRET);
 const fielUploadRequired = (scanType) => scanType && scanType.name === MOBILE
 
 const targetFieldRequired = (ownerType, scanType) => ownerType && scanType && (((scanType.name === SOURCE_CODE || scanType.name === HARDCODED_SECRET) && ownerType.name === PERSONAL) || scanType.name === WEB || scanType.name === NETWORK || scanType.name === WORDPRESS);
@@ -170,7 +170,7 @@ class TargetForm extends Component {
     this.setState({apkFile: file})
   }
   renderProjectTitle(ownerType, scanType, projectTitle) {
-    if (projectTitleFieldRequired(ownerType, scanType)) {
+    if (projectTitleFieldRequired(ownerType, scanType) && hardcodeSecretProjectTitleFieldRequired(ownerType, scanType)) {
       return (<TextValidator name="projectTitle" value={this.state.projectTitle} validators={['required']} errorMessages={['this field is required']} floatingLabelText="Project Title" onChange={this.handleProjectTitleChange} fullWidth={true} underlineFocusStyle={underlineFocusStyle} floatingLabelFocusStyle={floatingLabelFocusStyle}/>);
     }
   }
@@ -341,17 +341,19 @@ class TargetForm extends Component {
         .push(redirectUrl, {state: 'state'});
       toastr.success('Scan created successfully');
     }
-    if (nextProps.fetchedGroups) {
+    if (nextProps.fetchedGroups && !nextProps.createResponse) {
       var SelectedGroup = nextProps
         .fetchedGroups
         .find((group) => group.isDefault);
-      this.setState({
-        selectedGroups: {
-          value: SelectedGroup.id,
-          label: SelectedGroup.name,
-        },
-        selectedGroupIds: [SelectedGroup.id],
-      });
+      if (SelectedGroup) {
+        this.setState({
+          selectedGroups: {
+            value: SelectedGroup.id,
+            label: SelectedGroup.name,
+          },
+          selectedGroupIds: [SelectedGroup.id],
+        });
+      }
     }
     if (nextProps.currentScanType && nextProps.currentScanType.name === NETWORK) {
       ValidatorForm.addValidationRule('isValidUrl', (value) => {

@@ -2,7 +2,15 @@
  * The reducer takes care of state changes in our app through actions
  */
 
-import {FETCH_FILTER_RESULTS, FETCH_FILTER_RESULTS_FULFILLED, FETCH_FILTER_VALUES, FETCH_FILTER_VALUES_FULFILLED, FILTER_OPERATION_REJECTED} from '../Actions/ActionTypes'
+import {
+  FETCH_FILTER_RESULTS,
+  FETCH_FILTER_RESULTS_FULFILLED,
+  FETCH_FILTER_VALUES,
+  FETCH_FILTER_VALUES_FULFILLED,
+  UPDATE_FILTER_FINDING,
+  UPDATE_FILTER_FINDING_FULFILLED,
+  FILTER_OPERATION_REJECTED
+} from '../Actions/ActionTypes'
 
 // The initial filters state
 let initialState = {
@@ -11,6 +19,7 @@ let initialState = {
   currentOwnerType: null,
   currentScanType: null,
   findingsUpdateAllowed: false,
+  updateFilterFindings: false,
   totalSize: 0,
   fetching: false,
   fetched: false,
@@ -28,6 +37,7 @@ function reducer(state = initialState, action) {
     case FETCH_FILTER_VALUES_FULFILLED:
       return {
         ...state,
+        updateFilterFindings: false,
         fetched: true,
         currentScanType: action.payload.scanType,
         currentOwnerType: action.payload.ownerType,
@@ -39,9 +49,20 @@ function reducer(state = initialState, action) {
         ...state,
         fetching: true
       }
+    case UPDATE_FILTER_FINDING:
+      return {
+        ...state,
+        updateFilterFindings: false,
+      }
+    case UPDATE_FILTER_FINDING_FULFILLED:
+      return {
+        ...state,
+        updateFilterFindings: true
+      }
     case FETCH_FILTER_RESULTS_FULFILLED:
       return {
         ...state,
+        updateFilterFindings: false,
         fetched: true,
         currentScanType: action.payload.scanType,
         currentOwnerType: action.payload.ownerType,

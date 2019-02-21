@@ -10,10 +10,10 @@ import * as tagActions from '../../Actions/TagActions'
 import * as findingActions from '../../Actions/FindingActions'
 import {Button} from 'react-bootstrap';
 import {BootstrapTable} from 'react-bootstrap-table'
-import {underlineFocusStyle, floatingLabelFocusStyle, selectContainerStyle} from '../CSSModules'
+import {underlineFocusStyle, floatingLabelFocusStyle, selectContainerStyle,} from '../CSSModules'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {fetchDropdownOptions, selectionsRenderer} from '../Common'
+import {fetchDropdownOptions, selectionsRenderer,} from '../Common'
 import {toastr} from 'react-redux-toastr'
 import {severityBadgeStyle} from '../CSSModules'
 
@@ -33,7 +33,7 @@ class FilterList extends Component {
       selectedFindings: {},
       falsePositiveBtn: true,
       notExploitableBtn: true,
-      checkedAll: false,
+      checkedAll: false
     }
     this.fetchData = this
       .fetchData
@@ -90,16 +90,16 @@ class FilterList extends Component {
     var statues = [
       {
         id: "Open",
-        name: "Open",
+        name: "Open"
       }, {
         id: "Closed",
-        name: "Closed",
+        name: "Closed"
       }, {
         id: "Deferred",
-        name: "Deferred",
+        name: "Deferred"
       }, {
         id: "Fix in progress",
-        name: "Fix in progress",
+        name: "Fix in progress"
       },
     ];
     return (
@@ -131,19 +131,19 @@ class FilterList extends Component {
     var severities = [
       {
         id: "Critical",
-        name: "Critical",
+        name: "Critical"
       }, {
         id: "High",
-        name: "High",
+        name: "High"
       }, {
         id: "Medium",
-        name: "Medium",
+        name: "Medium"
       }, {
         id: "Low",
-        name: "Low",
+        name: "Low"
       }, {
         id: "Info",
-        name: "Info",
+        name: "Info"
       },
     ];
     return (
@@ -159,7 +159,7 @@ class FilterList extends Component {
     filterValues
       .vulnerableTypes
       .map(function(type) {
-        vulnerableTypes.push({id: type.name, name: type.name});
+        vulnerableTypes.push({id: type.name, name: type.name,});
       });
     return (
       <SelectField name='vulnerabilities' hintText='' value={this.state.vulnerabilities} floatingLabel='Vulnerable Type' onChange={this.handleVulChange} fullWidth={true} maxHeight={200} floatingLabelFocusStyle={floatingLabelFocusStyle} underlineFocusStyle={underlineFocusStyle} multiple={true} checkPosition='right' style={selectContainerStyle} selectionsRenderer={(values, hintText) => selectionsRenderer(values, hintText)}>
@@ -171,19 +171,19 @@ class FilterList extends Component {
     var aging = [
       {
         id: 7,
-        name: '1 month ago'
+        name: '1 month ago',
       }, {
         id: 30,
-        name: '1 month ago'
+        name: '1 month ago',
       }, {
         id: 90,
-        name: '3 months ago'
+        name: '3 months ago',
       }, {
         id: 180,
-        name: '6 months ago'
+        name: '6 months ago',
       }, {
         id: 365,
-        name: '1 year ago'
+        name: '1 year ago',
       },
     ];
     return (
@@ -199,7 +199,7 @@ class FilterList extends Component {
     filterValues
       .tools
       .map(function(tool) {
-        tools.push({id: tool.name, name: tool.name});
+        tools.push({id: tool.name, name: tool.name,});
       });
     return (
       <SelectField name='tools' hintText='' value={this.state.tools} floatingLabel='Tool' onChange={this.handleToolChange} fullWidth={true} maxHeight={200} floatingLabelFocusStyle={floatingLabelFocusStyle} underlineFocusStyle={underlineFocusStyle} multiple={true} checkPosition='right' style={selectContainerStyle} selectionsRenderer={(values, hintText) => selectionsRenderer(values, hintText)}>
@@ -227,7 +227,7 @@ class FilterList extends Component {
       selectedFindings: selectedFindings,
       checkedAll: !this.state.checkedAll,
       notExploitableBtn: needToDisableBtns,
-      falsePositiveBtn: needToDisableBtns
+      falsePositiveBtn: needToDisableBtns,
     });
   }
   selectOne(event) {
@@ -247,18 +247,18 @@ class FilterList extends Component {
     this.setState({
       selectedFindings: selectedFindings,
       notExploitableBtn: !selectedAtLeastOne,
-      falsePositiveBtn: !selectedAtLeastOne,
+      falsePositiveBtn: !selectedAtLeastOne
     });
   }
   componentDidMount() {
-    var {ownerType, scanType} = this.props;
+    var {ownerType, scanType,} = this.props;
     if (this.props.severity) {
       var payload = {
         limit: 10,
         ownerTypeId: ownerType,
         orderBy: 'name',
         sortDirection: 'asc',
-        severity: this.props.severity,
+        severity: this.props.severity
       };
       this
         .props
@@ -267,7 +267,7 @@ class FilterList extends Component {
       this.setState({
         severity: {
           label: this.props.severity,
-          value: this.props.severity,
+          value: this.props.severity
         }
       })
     }
@@ -277,7 +277,7 @@ class FilterList extends Component {
         ownerTypeId: ownerType,
         orderBy: 'name',
         sortDirection: 'asc',
-        vulnerabilities: [this.props.vulnerableType],
+        vulnerabilities: [this.props.vulnerableType]
       };
       this
         .props
@@ -287,7 +287,7 @@ class FilterList extends Component {
         vulnerabilities: [
           {
             label: this.props.vulnerableType,
-            value: this.props.vulnerableType,
+            value: this.props.vulnerableType
           }
         ]
       })
@@ -295,11 +295,11 @@ class FilterList extends Component {
     this.fetchFilterValues(ownerType, scanType);
   }
   fetchFilterValues(ownerType, scanType) {
-    this.setState({currentScanTypeId: scanType, currentOwnerTypeId: ownerType,})
+    this.setState({currentScanTypeId: scanType, currentOwnerTypeId: ownerType})
     var payload = {
       limit: -1,
       ownerTypeId: ownerType,
-      scanTypeId: scanType,
+      scanTypeId: scanType
     };
     this
       .props
@@ -326,7 +326,7 @@ class FilterList extends Component {
     this
       .props
       .actions
-      .updateFinding(payload, 0);
+      .updateFilterFinding(payload, 0);
   }
 
   handleSubmit(event) {
@@ -336,7 +336,7 @@ class FilterList extends Component {
       ownerTypeId: this.state.currentOwnerTypeId,
       scanTypeId: this.state.currentScanTypeId,
       orderBy: 'name',
-      sortDirection: 'asc',
+      sortDirection: 'asc'
     };
     var payloadDetails = this.getPayload(payload);
     payload = payloadDetails[0];
@@ -471,7 +471,7 @@ class FilterList extends Component {
       sortDirection: sortDirection,
       searchTerm: searchTerm,
       ownerTypeId: this.state.currentOwnerTypeId,
-      scanTypeId: this.state.currentScanTypeId,
+      scanTypeId: this.state.currentScanTypeId
     }
     var payloadDetails = this.getPayload(payload);
     payload = payloadDetails[0];
@@ -488,7 +488,7 @@ class FilterList extends Component {
       orderBy: orderBy
         ? orderBy
         : "name",
-      sortDirection: sortDirection
+      sortDirection: sortDirection,
     })
   }
   handlePageChange(page, sizePerPage) {
@@ -560,7 +560,7 @@ class FilterList extends Component {
       firstPage: 'First', // First page button text
       lastPage: 'Last', // Last page button text,,,,
       onSearchChange: this.handleSearchChange,
-      onSortChange: this.handleSortChange
+      onSortChange: this.handleSortChange,
     };
     const {fetchedResults} = this.props;
     const {totalSize} = this.props;
@@ -639,5 +639,11 @@ class FilterList extends Component {
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(Object.assign({}, filterActions, groupActions, repoActions, toolActions, tagActions, findingActions), dispatch)
 });
-const mapStateToProps = (state) => ({filterValues: state.filters.filterValues, fetchedResults: state.filters.fetchedResults, totalSize: state.filters.totalSize, findingsUpdateAllowed: state.filters.findingsUpdateAllowed, updateResponse: state.findings.updateResponse});
+const mapStateToProps = (state) => ({
+  filterValues: state.filters.filterValues,
+  fetchedResults: state.filters.fetchedResults,
+  totalSize: state.filters.totalSize,
+  findingsUpdateAllowed: state.filters.findingsUpdateAllowed,
+  updateResponse: state.filters.updateFilterFindings,
+});
 export default connect(mapStateToProps, mapDispatchToProps)(FilterList);
