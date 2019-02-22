@@ -22,17 +22,17 @@ export default class Header extends React.Component {
               <li>
                 <a href="#work_outer">Latest Work</a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#team">Team</a>
-              </li>
+              </li> */}
               <li>
                 <Link to="/login">
                   Sign in
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <a href="#contact">Contact</a>
-              </li>
+              </li> */}
             </ul>
           </nav>
           <a class="res-nav_click animated wobble wow" href="javascript:void(0)">

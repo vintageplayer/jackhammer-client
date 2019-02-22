@@ -65,10 +65,6 @@ export default class HowItWorks extends React.Component {
                       </p>
                     </div>
                   </div>
-                  <div class="work_bottom">
-                    <span>Ready to take the plunge?</span>
-                    <a href="#contact" class="contact_btn">Contact Us</a>
-                  </div>
                 </div>
                 <div class="col-xs-5 text-right wow fadeInUp delay-02s">
                   <img src="/images/new_dashboard_1.png" class="img-responsive" style={imgStyles}/>

@@ -40,79 +40,79 @@ class TopNav extends Component {
           </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <li class="dropdown messages-menu">
+              {/* <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
                   <span class="label label-success">4</span>
-                </a>
-                <ul class="dropdown-menu">
+              </a> */}
+              {/* <ul class="dropdown-menu">
                   <li class="header">You have 4 messages</li>
                   <li>
-                    <ul class="menu">
-                      <li>
-                        <a href="#">
-                          <h4>
-                            Support Team
-                            <small>
-                              <i class="fa fa-clock-o"></i>
-                              5 mins</small>
-                          </h4>
-                          <p>10 scans are ran</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h4>
-                            Dev Team
-                            <small>
-                              <i class="fa fa-clock-o"></i>
-                              2 hours
-                            </small>
-                          </h4>
-                          <p>13 scans are ran</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h4>
-                            Developers
-                            <small>
-                              <i class="fa fa-clock-o"></i>
-                              Today</small>
-                          </h4>
-                          <p>13 scans are ran</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h4>
-                            Sales Department
-                            <small>
-                              <i class="fa fa-clock-o"></i>
-                              Yesterday</small>
-                          </h4>
-                          <p>13 scans are ran</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h4>
-                            Reviewers
-                            <small>
-                              <i class="fa fa-clock-o"></i>
-                              2 days</small>
-                          </h4>
-                          <p>13 scans are ran</p>
-                        </a>
-                      </li>
-                    </ul>
+                <ul class="menu">
+                  <li>
+                  <a href="#">
+                  <h4>
+                  Support Team
+                  <small>
+                  <i class="fa fa-clock-o"></i>
+                  5 mins</small>
+                  </h4>
+                  <p>10 scans are ran</p>
+                  </a>
                   </li>
-                  <li class="footer">
-                    <a href="#">See All Messages</a>
+                  <li>
+                  <a href="#">
+                  <h4>
+                  Dev Team
+                  <small>
+                  <i class="fa fa-clock-o"></i>
+                  2 hours
+                  </small>
+                  </h4>
+                  <p>13 scans are ran</p>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#">
+                  <h4>
+                  Developers
+                  <small>
+                  <i class="fa fa-clock-o"></i>
+                  Today</small>
+                  </h4>
+                  <p>13 scans are ran</p>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#">
+                  <h4>
+                  Sales Department
+                  <small>
+                  <i class="fa fa-clock-o"></i>
+                  Yesterday</small>
+                  </h4>
+                  <p>13 scans are ran</p>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#">
+                  <h4>
+                  Reviewers
+                  <small>
+                  <i class="fa fa-clock-o"></i>
+                  2 days</small>
+                  </h4>
+                  <p>13 scans are ran</p>
+                  </a>
                   </li>
                 </ul>
-              </li>
-              <li class="dropdown notifications-menu">
+                  </li>
+                  <li class="footer">
+                <a href="#">See All Messages</a>
+                  </li>
+              </ul> */}
+              {/* </li> */}
+              {/* <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
                   <span class="label label-warning">10</span>
@@ -120,46 +120,46 @@ class TopNav extends Component {
                 <ul class="dropdown-menu">
                   <li class="header">You have 10 notifications</li>
                   <li>
-                    <ul class="menu">
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-users text-aqua"></i>
-                          5 new members joined today
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-warning text-yellow"></i>
-                          Very long description here that may not fit into the page and may cause design problems
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-users text-red"></i>
-                          5 new members joined
-                        </a>
-                      </li>
+                <ul class="menu">
+                <li>
+                <a href="#">
+                <i class="fa fa-users text-aqua"></i>
+                5 new members joined today
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                <i class="fa fa-warning text-yellow"></i>
+                Very long description here that may not fit into the page and may cause design problems
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                <i class="fa fa-users text-red"></i>
+                5 new members joined
+                </a>
+                </li>
 
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-shopping-cart text-green"></i>
-                          25 sales made
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-user text-light-blue"></i>
-                          You changed your username
-                        </a>
-                      </li>
-                    </ul>
+                <li>
+                <a href="#">
+                <i class="fa fa-shopping-cart text-green"></i>
+                25 sales made
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                <i class="fa fa-user text-light-blue"></i>
+                You changed your username
+                </a>
+                </li>
+                </ul>
                   </li>
                   <li class="footer">
-                    <a href="#">View all</a>
+                <a href="#">View all</a>
                   </li>
                 </ul>
-              </li>
-              <li class="dropdown tasks-menu">
+              </li> */}
+              {/* <li class="dropdown tasks-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-flag-o"></i>
                   <span class="label label-danger">9</span>
@@ -167,75 +167,76 @@ class TopNav extends Component {
                 <ul class="dropdown-menu">
                   <li class="header">You have 9 tasks</li>
                   <li>
-                    <ul class="menu">
-                      <li>
-                        <a href="#">
-                          <h3>
-                            Design some buttons
-                            <small class="pull-right">20%</small>
-                          </h3>
-                          <div class="progress xs">
-                            <div class="progress-bar progress-bar-aqua" style={Width1} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                              <span class="sr-only">20% Complete</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h3>
-                            Create a nice theme
-                            <small class="pull-right">40%</small>
-                          </h3>
-                          <div class="progress xs">
-                            <div class="progress-bar progress-bar-green" style={Width2} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                              <span class="sr-only">40% Complete</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h3>
-                            Some task I need to do
-                            <small class="pull-right">60%</small>
-                          </h3>
-                          <div class="progress xs">
-                            <div class="progress-bar progress-bar-red" style={Width3} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                              <span class="sr-only">60% Complete</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h3>
-                            Make beautiful transitions
-                            <small class="pull-right">80%</small>
-                          </h3>
-                          <div class="progress xs">
-                            <div class="progress-bar progress-bar-yellow" style={Width4} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                              <span class="sr-only">80% Complete</span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
+                <ul class="menu">
+                <li>
+                <a href="#">
+                <h3>
+                Design some buttons
+                <small class="pull-right">20%</small>
+                </h3>
+                <div class="progress xs">
+                <div class="progress-bar progress-bar-aqua" style={Width1} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only">20% Complete</span>
+                </div>
+                </div>
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                <h3>
+                Create a nice theme
+                <small class="pull-right">40%</small>
+                </h3>
+                <div class="progress xs">
+                <div class="progress-bar progress-bar-green" style={Width2} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only">40% Complete</span>
+                </div>
+                </div>
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                <h3>
+                Some task I need to do
+                <small class="pull-right">60%</small>
+                </h3>
+                <div class="progress xs">
+                <div class="progress-bar progress-bar-red" style={Width3} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only">60% Complete</span>
+                </div>
+                </div>
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                <h3>
+                Make beautiful transitions
+                <small class="pull-right">80%</small>
+                </h3>
+                <div class="progress xs">
+                <div class="progress-bar progress-bar-yellow" style={Width4} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only">80% Complete</span>
+                </div>
+                </div>
+                </a>
+                </li>
+                </ul>
                   </li>
                   <li class="footer">
-                    <a href="#">View all tasks</a>
+                <a href="#">View all tasks</a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li class="dropdown logout-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-user"></i>
+                  {/* <i class="fa fa-user"></i> */}
+                  {this.displayUserName(auth)}
                 </a>
                 <ul class="dropdown-menu">
-                  <li class="header">
+                  {/* <li class="header">
                     <i class="glyphicon glyphicon-user pull-right"></i>
                     {this.displayUserName(auth)}
-                  </li>
+                  </li> */}
                   <li>
                     <ul class="menu">
                       <li>
