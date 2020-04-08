@@ -76,14 +76,14 @@ class Form extends Component {
     event.preventDefault();
     var gitType = this.state.gitType == 0
       ? "Github"
-      : "Gitlab"
+      : (this.state.gitType === 1? "Gitlab" : "Bitbucket")
     var payload = {
       gitType: gitType,
       userName: this.state.userName,
       gitEndPoint: this.state.gitEndPoint,
       apiAccessToken: this.state.apiToken,
     }
-    if (gitType === 'Github') {
+    if (gitType === 'Github' || gitType === 'Bitbucket') {
       payload['organizationName'] = this.state.organizationName
     }
     if (this.state.gitDetailsPresent) {
@@ -99,7 +99,7 @@ class Form extends Component {
     }
   }
   renderGithubOrganization() {
-    if (this.state.gitType === 0) {
+    if (this.state.gitType === 0 || this.state.gitType === 2) {
       return (<TextValidator name="organizationName" validators={requiredValidation()} errorMessages={errorMessage()} value={this.state.organizationName} floatingLabelText="Organization Name" fullWidth={true} underlineFocusStyle={underlineFocusStyle} floatingLabelFocusStyle={floatingLabelFocusStyle} onChange={this.handleOrganizationChange}/>);
     }
   }
@@ -122,6 +122,7 @@ class Form extends Component {
           <SelectValidator fullWidth={true} value={this.state.gitType} name="gitType" validators={requiredValidation()} errorMessages={errorMessage()} floatingLabelText="Git Type" onChange={this.handleGitTypeChange} underlineFocusStyle={underlineFocusStyle} floatingLabelFocusStyle={floatingLabelFocusStyle}>
             <MenuItem value={0} key="Github" primaryText="Github"/>
             <MenuItem value={1} key="Gitlab" primaryText="Gitlab"/>
+            <MenuItem value={2} key="Bitbucket" primaryText="Bitbucket"/>
           </SelectValidator>
           {this.renderGithubOrganization()}
           <TextValidator name="userName" validators={requiredValidation()} errorMessages={errorMessage()} value={this.state.userName} floatingLabelText="User Name" fullWidth={true} underlineFocusStyle={underlineFocusStyle} floatingLabelFocusStyle={floatingLabelFocusStyle} onChange={this.handleUserNameChange}/>
